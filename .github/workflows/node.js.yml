@@ -21,10 +21,9 @@ jobs:
       - run: npm install
       - run: npm run
 
-      - name: Deploys a NodeJS service in a remote server
-        uses: sergiogc9/github-action-deploy-ssh@v0.0.1
+      - name: ssh deploy
+        uses: easingthemes/ssh-deploy@v2.2.11
         with:
-          path: ./*
           remote_path: /var/www/my-app/
           remote_host: 172-31-0-140
           remote_user: ubuntu
