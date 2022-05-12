@@ -12,9 +12,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
-    if: github.ref == 'refs/heads/master'
-
     strategy:
       matrix:
         node-version: [12.x]
