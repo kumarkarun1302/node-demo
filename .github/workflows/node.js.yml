@@ -24,7 +24,8 @@ jobs:
       - name: ssh deploy
         uses: easingthemes/ssh-deploy@v2.2.11
         with:
-          remote_path: /var/www/my-app/
-          remote_host: 172-31-0-140
-          remote_user: ubuntu
-          remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: 172-31-0-140
+          REMOTE_USER: UBUNTU
+          REMOTE_PORT: 22
+          TARGET: /var/www/my-app/
