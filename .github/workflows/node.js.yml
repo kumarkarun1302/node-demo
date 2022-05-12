@@ -21,12 +21,11 @@ jobs:
       - run: npm install
       - run: npm run
 
-      - name: rsync deployments
-        uses: burnett01/rsync-deployments@5.1
+      - name: Deploy Stack
+        uses: okteto/deploy-stack@1.14.5
         with:
-          switches: -avzr --delete
           path: ./*
           remote_path: /var/www/my-app/
-          remote_host: ip-172-31-0-140.ap-south-1.compute.internal
+          remote_host: 172-31-0-140
           remote_user: ubuntu
           remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
